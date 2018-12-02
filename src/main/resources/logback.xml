@@ -1,0 +1,24 @@
+<configuration>
+
+    <appender name="FILE" class="ch.qos.logback.core.FileAppender">
+        <file>./log/java11-sb-stockservice.log</file>
+        <append>false</append>
+        <encoder>
+            <pattern>%d [%thread] %-5level %class{0} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%d [%thread] %-5level %class{0} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <root level="INFO">
+        <appender-ref ref="FILE" />
+        <appender-ref ref="STDOUT" />
+    </root>
+
+    <logger name="org.stockservice" level="DEBUG" />
+
+</configuration>
