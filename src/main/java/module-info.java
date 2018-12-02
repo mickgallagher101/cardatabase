@@ -19,11 +19,13 @@ module com.packt.cardatabase {
     requires spring.boot.autoconfigure;
     requires spring.boot.starter.web;
     requires spring.boot.starter.logging;
-    requires spring.web;
     requires spring.boot.starter.data.rest;
     requires spring.boot.starter.data.jpa;
+    requires spring.boot.starter.security;
+    requires spring.web;
     requires spring.beans;
     requires spring.context;
+    requires spring.security.config;
 
     // 3rd party (some transitive) dependencies
     requires reactor.core;  // remove the transitive directive going forward
