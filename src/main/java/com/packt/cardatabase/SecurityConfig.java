@@ -18,8 +18,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
 
-        // Add this row to allow access to all endpoints
-        http.cors().and().authorizeRequests().anyRequest().permitAll();
+        // Add this row to allow access to all endpoints. If we don't add the csrf().disable()
+        // check then Spring gives us a 403 Forbidden error.
+        http.csrf().disable().cors().and().authorizeRequests().anyRequest().permitAll();
 
         /*********
         http.csrf().disable().cors().and().authorizeRequests()
