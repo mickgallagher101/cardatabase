@@ -36,7 +36,7 @@ module com.packt.cardatabase {
     //requires java.activation;
     requires commons.text;
     requires com.fasterxml.jackson.databind;
-
+    requires java.persistence;
 
 
 }
