@@ -2,9 +2,11 @@ package com.packt.cardatabase;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.http.HttpMethod;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.CorsConfigurationSource;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
@@ -20,9 +22,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
         // Add this row to allow access to all endpoints. If we don't add the csrf().disable()
         // check then Spring gives us a 403 Forbidden error.
-        http.csrf().disable().cors().and().authorizeRequests().anyRequest().permitAll();
+        //http.csrf().disable().cors().and().authorizeRequests().anyRequest().permitAll();
 
-        /*********
         http.csrf().disable().cors().and().authorizeRequests()
             .antMatchers(HttpMethod.POST, "/login").permitAll()
             .anyRequest().authenticated()
@@ -33,7 +34,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
             // Filter for other requests to check JWT in header
             .addFilterBefore(new AuthenticationFilter(),
                 UsernamePasswordAuthenticationFilter.class);
-         *******/
     }
 
     @Bean

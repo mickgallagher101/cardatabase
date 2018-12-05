@@ -28,6 +28,9 @@ module com.packt.cardatabase {
     requires spring.security.config;
     requires spring.data.commons;
     requires spring.data.rest.core;
+    requires spring.security.web;
+    requires spring.security.core;
+    requires tomcat.embed.core;
 
     // 3rd party (some transitive) dependencies
     requires reactor.core;  // remove the transitive directive going forward
@@ -37,6 +40,7 @@ module com.packt.cardatabase {
     requires commons.text;
     requires com.fasterxml.jackson.databind;
     requires java.persistence;
+
 
 
 }
