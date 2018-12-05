@@ -31,6 +31,7 @@ module com.packt.cardatabase {
     requires spring.security.web;
     requires spring.security.core;
     requires tomcat.embed.core;
+    requires jjwt;
 
     // 3rd party (some transitive) dependencies
     requires reactor.core;  // remove the transitive directive going forward
